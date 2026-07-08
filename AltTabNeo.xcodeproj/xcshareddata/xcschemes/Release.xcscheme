@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D04BA5E73DAF232ADE11C97A"
-               BuildableName = "AltTabX.app"
-               BlueprintName = "AltTabX"
-               ReferencedContainer = "container:AltTabX.xcodeproj">
+               BuildableName = "AltTabNeo.app"
+               BlueprintName = "AltTabNeo"
+               ReferencedContainer = "container:AltTabNeo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D04BA5E73DAF232ADE11C97A"
-            BuildableName = "AltTabX.app"
-            BlueprintName = "AltTabX"
-            ReferencedContainer = "container:AltTabX.xcodeproj">
+            BuildableName = "AltTabNeo.app"
+            BlueprintName = "AltTabNeo"
+            ReferencedContainer = "container:AltTabNeo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference

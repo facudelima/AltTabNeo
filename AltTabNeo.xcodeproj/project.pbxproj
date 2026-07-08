@@ -314,7 +314,7 @@
 		D04BAB048DE698E013577C51 /* TilesPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA653BD073CB58E2CFC93 /* TilesPanel.swift */; };
 		D04BAB4EB890853B5B9B2C61 /* BoldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BACEE8D430B8CAAD8C4CD /* BoldLabel.swift */; };
 		D04BAB68B7B8D1B548BC3AD5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BAAB92261FC04854FDDE9 /* App.swift */; };
-		ATX0000000000000000000002 /* AltTabXBranding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ATX0000000000000000000001 /* AltTabXBranding.swift */; };
+		ATX0000000000000000000002 /* AltTabNeoBranding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ATX0000000000000000000001 /* AltTabNeoBranding.swift */; };
 		D04BABD613F88C27E720F316 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D04BA863BC6929EB0A2AC590 /* InfoPlist.strings */; };
 		D04BABED81800E18732912CC /* CGWindowID.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA03200F5A8FC0CD03607 /* CGWindowID.swift */; };
 		D04BABEECBC6D922298BC93A /* Spaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BA7CF9C2D1BEC7C05AB24 /* Spaces.swift */; };
@@ -413,7 +413,7 @@
 		25966EE691FC6871588D796B /* ProBadgeViewSegmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProBadgeViewSegmentTests.swift; sourceTree = "<group>"; };
 		3F9B638CE7C1DF9BD655C52B /* ObjCExceptionCatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCExceptionCatcher.h; sourceTree = "<group>"; };
 		4807A6C523A9CD190052A53E /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
-		481FE54624D2D387001032F1 /* AltTabX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AltTabX-Bridging-Header.h"; sourceTree = "<group>"; };
+		481FE54624D2D387001032F1 /* AltTabNeo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AltTabNeo-Bridging-Header.h"; sourceTree = "<group>"; };
 		4B4409E4B3D98C491503CE5D /* OverrideClickResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverrideClickResolverTests.swift; sourceTree = "<group>"; };
 		5883F0A729A5182C0071DB65 /* TrackpadEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackpadEvents.swift; sourceTree = "<group>"; };
 		5C5A1100000000000000A001 /* WsEventRouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WsEventRouting.swift; sourceTree = "<group>"; };
@@ -681,7 +681,7 @@
 		D04BA7F8F1F44D5D9844BFF5 /* ar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ar; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D04BA812B8DCB915B8F4B915 /* contributors.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = contributors.md; sourceTree = "<group>"; };
 		D04BA8209A337A2960716E3B /* zh-CN */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = Localizable.strings; sourceTree = "<group>"; };
-		D04BA82F792DF53958D92572 /* AltTabX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltTabX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D04BA82F792DF53958D92572 /* AltTabNeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AltTabNeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04BA84F172AE89F210CA01D /* Pipfile.lock */ = {isa = PBXFileReference; lastKnownFileType = file.lock; path = Pipfile.lock; sourceTree = "<group>"; };
 		D04BA8AC77465E1B2BC947CF /* StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		D04BA8DB8AA7E5570DAC568A /* Sysctl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sysctl.swift; sourceTree = "<group>"; };
@@ -696,7 +696,7 @@
 		D04BAA998119CAA8B70A2B67 /* TilesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TilesView.swift; sourceTree = "<group>"; };
 		D04BAA9E0539EE620D08F63F /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D04BAAB92261FC04854FDDE9 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		ATX0000000000000000000001 /* AltTabXBranding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltTabXBranding.swift; sourceTree = "<group>"; };
+		ATX0000000000000000000001 /* AltTabNeoBranding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltTabNeoBranding.swift; sourceTree = "<group>"; };
 		D04BAADF01EB8FF8A15AECC6 /* acknowledgments.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = acknowledgments.md; sourceTree = "<group>"; };
 		D04BAAE6E6823304D66B74F8 /* update_website.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update_website.sh; sourceTree = "<group>"; };
 		D04BAAF760E3A8A22BDA84D6 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
@@ -738,7 +738,7 @@
 		D04BAED1C4D6BB8E24847E79 /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		D04BAEF1D194C2379C9970F1 /* setup_ci_master.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setup_ci_master.sh; sourceTree = "<group>"; };
 		D04BAF1058D2599E6E8ABBA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		D04BAF6F617FCA44D1F75B60 /* AltTabX.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = AltTabX.entitlements; sourceTree = "<group>"; };
+		D04BAF6F617FCA44D1F75B60 /* AltTabNeo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = AltTabNeo.entitlements; sourceTree = "<group>"; };
 		D04BAFC0A1B2C3D4E5F60001 /* TileOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileOverView.swift; sourceTree = "<group>"; };
 		D04BAFC2A1B2C3D4E5F60003 /* TileUnderLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileUnderLayer.swift; sourceTree = "<group>"; };
 		D04BAFDA9E2623E21CBD6CEF /* zh-TW */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -1231,13 +1231,13 @@
 				D04BAAF760E3A8A22BDA84D6 /* appcast.xml */,
 				D04BA6251F309645757C6000 /* src */,
 				D04BAF1058D2599E6E8ABBA6 /* Info.plist */,
-				D04BAF6F617FCA44D1F75B60 /* AltTabX.entitlements */,
+				D04BAF6F617FCA44D1F75B60 /* AltTabNeo.entitlements */,
 				D04BAA17F1B492591AAAA9A7 /* config */,
 				D04BA9CA03317B315B267E21 /* resources */,
 				D04BA075E359F36C27CD5BAE /* package-lock.json */,
 				D04BAB8A94DA69A6B5008AE5 /* Pipfile */,
 				D04BA84F172AE89F210CA01D /* Pipfile.lock */,
-				481FE54624D2D387001032F1 /* AltTabX-Bridging-Header.h */,
+				481FE54624D2D387001032F1 /* AltTabNeo-Bridging-Header.h */,
 				1C9618573E422118423CEC48 /* .swiftformatignore */,
 				1C9616522F4E58860385E090 /* .swiftformat */,
 				BF0C87320241EAE01E38EF53 /* .periphery.yml */,
@@ -1257,7 +1257,7 @@
 		D04BA1A461BBB5A9BE15E015 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D04BA82F792DF53958D92572 /* AltTabX.app */,
+				D04BA82F792DF53958D92572 /* AltTabNeo.app */,
 				BF0C832DEED422648209CCD2 /* unit-tests.xctest */,
 			);
 			name = Products;
@@ -1404,7 +1404,7 @@
 				D04BA0D80B24E72B9B981A1D /* debug */,
 				BF0C827B752F58F79EDB6B6C /* experimentations */,
 				D04BAAB92261FC04854FDDE9 /* App.swift */,
-				ATX0000000000000000000001 /* AltTabXBranding.swift */,
+				ATX0000000000000000000001 /* AltTabNeoBranding.swift */,
 				AECF000000000000000000A0 /* api */,
 				CC00000000000000000C0001 /* pro */,
 				CC00000000000000000C0010 /* switcher */,
@@ -1676,9 +1676,9 @@
 			productReference = BF0C832DEED422648209CCD2 /* unit-tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D04BA5E73DAF232ADE11C97A /* AltTabX */ = {
+		D04BA5E73DAF232ADE11C97A /* AltTabNeo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D04BA4D71CBB2FA4B9947B10 /* Build configuration list for PBXNativeTarget "AltTabX" */;
+			buildConfigurationList = D04BA4D71CBB2FA4B9947B10 /* Build configuration list for PBXNativeTarget "AltTabNeo" */;
 			buildPhases = (
 				D04BAD01F4BCEDF8B539AFD2 /* Sources */,
 				D04BA82F32FB183F65DC3E42 /* Frameworks */,
@@ -1690,9 +1690,9 @@
 			);
 			dependencies = (
 			);
-			name = "AltTabX";
-			productName = "AltTabX";
-			productReference = D04BA82F792DF53958D92572 /* AltTabX.app */;
+			name = "AltTabNeo";
+			productName = "AltTabNeo";
+			productReference = D04BA82F792DF53958D92572 /* AltTabNeo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1704,7 +1704,7 @@
 				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = "Facundo De Lima";
 			};
-			buildConfigurationList = D04BA83C9495F252D87CDF0F /* Build configuration list for PBXProject "AltTabX" */;
+			buildConfigurationList = D04BA83C9495F252D87CDF0F /* Build configuration list for PBXProject "AltTabNeo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1741,7 +1741,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D04BA5E73DAF232ADE11C97A /* AltTabX */,
+				D04BA5E73DAF232ADE11C97A /* AltTabNeo */,
 				BF0C873EC188A7EBBCF4310D /* unit-tests */,
 			);
 		};
@@ -1994,7 +1994,7 @@
 				D04BA3CF766857381519B892 /* BackgroundWork.swift in Sources */,
 				D04BA48B00B4211A465C7337 /* DebugProfile.swift in Sources */,
 				D04BAB68B7B8D1B548BC3AD5 /* App.swift in Sources */,
-				ATX0000000000000000000002 /* AltTabXBranding.swift in Sources */,
+				ATX0000000000000000000002 /* AltTabNeoBranding.swift in Sources */,
 				D04BAB048DE698E013577C51 /* TilesPanel.swift in Sources */,
 				D04BA69D47B5E60A6AD9CBD9 /* TileTitleView.swift in Sources */,
 				D04BA1B133D53572D7B312C2 /* TileFontIconView.swift in Sources */,
@@ -2546,7 +2546,7 @@
 				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alttabx.app.unit-tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alttabneo.app.unit-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -2611,7 +2611,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alttabx.app.unit-tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alttabneo.app.unit-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -2757,7 +2757,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D04BA4D71CBB2FA4B9947B10 /* Build configuration list for PBXNativeTarget "AltTabX" */ = {
+		D04BA4D71CBB2FA4B9947B10 /* Build configuration list for PBXNativeTarget "AltTabNeo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D04BA6FB4EC72C6A126E86D7 /* Debug */,
@@ -2766,7 +2766,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D04BA83C9495F252D87CDF0F /* Build configuration list for PBXProject "AltTabX" */ = {
+		D04BA83C9495F252D87CDF0F /* Build configuration list for PBXProject "AltTabNeo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D04BA801581D700C583B53FB /* Debug */,
