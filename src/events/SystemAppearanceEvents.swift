@@ -12,5 +12,7 @@ class SystemAppearanceEvents {
         Logger.info { UserDefaults.standard.string(forKey: "AppleInterfaceStyle") ?? "Light" }
         // fix layout issues by resetting components
         App.resetPreferencesDependentComponents()
+        // app icons may have light/dark asset-catalog variants (e.g. cmux AppIconDark)
+        Applications.updateAppIcons()
     }
 }

@@ -489,12 +489,18 @@ class Applications {
     }
 
     static func updateAppIcons() {
-        for app in list {
-            BackgroundWork.screenshotsQueue.addOperation { [weak app] in
-                guard let app else { return }
-                let r = Application.appIconWithoutPadding(app.runningApplication.icon)
-                DispatchQueue.main.async { [weak app] in
-                    app?.icon = r
+        DispatchQueue.main.async {
+            for app in list {
+                let sourceIcon = Application.resolveSourceIcon(for: app)
+                BackgroundWork.screenshotsQueue.addOperation { [weak app] in
+                    guard let app else { return }
+                    let r = Application.appIconWithoutPadding(sourceIcon)
+                    DispatchQueue.main.async { [weak app] in
+                        app?.icon = r
+                        if SwitcherSession.isActive {
+                            App.refreshOpenUiAfterExternalEvent([])
+                        }
+                    }
                 }
             }
         }

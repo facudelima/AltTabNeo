@@ -39,6 +39,79 @@ class Application: NSObject {
         return 0
     }()
 
+    private static let preferredSourceIconSize = NSSize(width: 1024, height: 1024)
+
+    private static func isDarkModeForIcons() -> Bool {
+        if #available(macOS 10.14, *) {
+            if Thread.isMainThread {
+                return NSApp.effectiveAppearance.isDarkMode
+            }
+            // screenshotsQueue is concurrent/background — NSApp.effectiveAppearance is unreliable there
+            return UserDefaults.standard.string(forKey: "AppleInterfaceStyle") == "Dark"
+        }
+        return false
+    }
+
+    private static func iconDrawingAppearance() -> NSAppearance {
+        if #available(macOS 10.14, *) {
+            if Thread.isMainThread {
+                return NSApp.effectiveAppearance
+            }
+            let name: NSAppearance.Name = isDarkModeForIcons() ? .darkAqua : .aqua
+            return NSAppearance(named: name) ?? NSAppearance(named: .aqua)!
+        }
+        return NSAppearance(named: .aqua)!
+    }
+
+    /// Best-effort source icon for an app. `NSRunningApplication.icon` is often a 32×32 cache and ignores
+    /// asset-catalog dark variants (e.g. cmux ships `AppIconDark`). Prefer the bundle / workspace icon at
+    /// 1024×1024, with an explicit dark resource when the system is in dark mode.
+    /// Call from the main thread when possible — `isDarkModeForIcons()` falls back to UserDefaults off-main.
+    static func resolveSourceIcon(for application: Application) -> NSImage? {
+        if let bundleURL = application.bundleURL {
+            return resolveSourceIcon(bundleURL: bundleURL, runningIcon: application.runningApplication.icon)
+        }
+        return upscaledIcon(application.runningApplication.icon)
+    }
+
+    private static func resolveSourceIcon(bundleURL: URL, runningIcon: NSImage?) -> NSImage? {
+        guard let bundle = Bundle(url: bundleURL) else {
+            return upscaledWorkspaceIcon(bundleURL.path) ?? upscaledIcon(runningIcon)
+        }
+        let iconName = (bundle.infoDictionary?["CFBundleIconName"] as? String)
+            ?? (bundle.infoDictionary?["CFBundleIconFile"] as? String)
+            ?? "AppIcon"
+        if isDarkModeForIcons() {
+            for darkName in darkIconResourceNames(iconName) {
+                if let darkIcon = bundle.image(forResource: darkName) {
+                    return upscaledIcon(darkIcon)
+                }
+            }
+        }
+        if let bundleIcon = bundle.image(forResource: iconName) {
+            return upscaledIcon(bundleIcon)
+        }
+        return upscaledWorkspaceIcon(bundleURL.path) ?? upscaledIcon(runningIcon)
+    }
+
+    private static func darkIconResourceNames(_ base: String) -> [String] {
+        ["AppIconDark", "\(base)Dark", "\(base)-Dark", "\(base)_dark"]
+    }
+
+    private static func upscaledIcon(_ icon: NSImage?) -> NSImage? {
+        guard let icon else { return nil }
+        let copy = icon.copy() as! NSImage
+        copy.size = preferredSourceIconSize
+        return copy
+    }
+
+    private static func upscaledWorkspaceIcon(_ path: String) -> NSImage? {
+        let icon = NSWorkspace.shared.icon(forFile: path)
+        let copy = icon.copy() as! NSImage
+        copy.size = preferredSourceIconSize
+        return copy
+    }
+
     /// Converting NSImage to CGImage may seem simple, but it's actually very tricky. Lots of time has been put to make it work robustly
     /// The RunningApplication.icon can have store bitmaps or vectors. We have to rasterize into pixels. This is not easy as there are many APIs:
     ///   * icon.cgImage(forProposedRect:) > context.draw -> only API which works
@@ -48,6 +121,17 @@ class Application: NSObject {
     /// MacOS Big Sur also introduced a constant padding around app icons. It was later increased with Tahoe. We have to crop it
     static func appIconWithoutPadding(_ icon: NSImage?) -> CGImage? {
         guard let icon else { return nil }
+        if #available(macOS 11.0, *) {
+            var result: CGImage?
+            iconDrawingAppearance().performAsCurrentDrawingAppearance {
+                result = appIconWithoutPaddingImpl(icon)
+            }
+            return result
+        }
+        return appIconWithoutPaddingImpl(icon)
+    }
+
+    private static func appIconWithoutPaddingImpl(_ icon: NSImage) -> CGImage? {
         let finalWidth = max(TilesPanel.maxPossibleAppIconSize.width, TilesPanel.maxPossibleAppIconSize.height)
         // we hardcode cropping values based on a reference 1024 icon, and depending on the macOS version
         let padding = appIconPadding * (finalWidth / (1024 - appIconPadding * 2))
@@ -115,11 +199,17 @@ class Application: NSObject {
 
     func fetchAppIcon() {
         guard icon == nil else { return }
+        // Resolve on main — background queues see the wrong NSApp.effectiveAppearance (always light)
+        let sourceIcon = Application.resolveSourceIcon(for: self)
         BackgroundWork.screenshotsQueue.addOperation { [weak self] in
             guard let self, self.icon == nil else { return }
-            let r = Application.appIconWithoutPadding(runningApplication.icon)
+            let r = Application.appIconWithoutPadding(sourceIcon)
             DispatchQueue.main.async { [weak self] in
-                self?.icon = r
+                guard let self else { return }
+                self.icon = r
+                if SwitcherSession.isActive {
+                    App.refreshOpenUiAfterExternalEvent([])
+                }
             }
         }
     }
