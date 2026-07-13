@@ -406,7 +406,7 @@ final class AppearancePane {
             AppearanceTab.labelShortcutStyle,
             AppearanceTab.labelPreviewSelectedWindow,
         ]
-        if !AltTabXBranding.hideProUi {
+        if !AltTabNeoBranding.hideProUi {
             strings.append(ProBadgeView.proLabel)
         }
         return strings
@@ -434,7 +434,7 @@ final class AppearancePane {
             globalIndex: { Preferences.appearanceStyle.index },
             proGatedIndices: AppearanceTab.proGatedAppearanceStyleIndices(),
             onChange: onChange)
-        if !AltTabXBranding.hideProUi {
+        if !AltTabNeoBranding.hideProUi {
             AppearanceTab.addProBadgesToStyleButtons(style.stack)
         }
 
@@ -442,9 +442,9 @@ final class AppearancePane {
             baseName: "appearanceSizeOverride",
             cases: AppearanceSizePreference.allCases,
             globalIndex: { Preferences.appearanceSize.index },
-            proGatedIndices: AltTabXBranding.hideProUi ? [] : [AppearanceSizePreference.allCases.firstIndex(of: .auto)!],
+            proGatedIndices: AltTabNeoBranding.hideProUi ? [] : [AppearanceSizePreference.allCases.firstIndex(of: .auto)!],
             segmentWidth: 100,
-            attachBadge: AltTabXBranding.hideProUi ? nil : { c in AppearanceTab.addProBadgeToAutoSegment(c) },
+            attachBadge: AltTabNeoBranding.hideProUi ? nil : { c in AppearanceTab.addProBadgeToAutoSegment(c) },
             refreshBadge: { c, overlay in
                 AppearanceTab.refreshTrailingSegmentBadge(c, proIndex: AppearanceSizePreference.allCases.firstIndex(of: .auto)!, overlay: overlay)
             },
@@ -464,9 +464,9 @@ final class AppearancePane {
             baseName: "shortcutStyleOverride",
             cases: ShortcutStylePreference.allCases,
             globalIndex: { Preferences.shortcutStyle.index },
-            proGatedIndices: AltTabXBranding.hideProUi ? [] : [ShortcutStylePreference.allCases.firstIndex(of: .searchOnRelease)!],
+            proGatedIndices: AltTabNeoBranding.hideProUi ? [] : [ShortcutStylePreference.allCases.firstIndex(of: .searchOnRelease)!],
             segmentWidth: 100,
-            attachBadge: AltTabXBranding.hideProUi ? nil : { c in AppearanceTab.addProBadgeToShortcutStyleSegment(c, proIndex: ShortcutStylePreference.allCases.firstIndex(of: .searchOnRelease)!) },
+            attachBadge: AltTabNeoBranding.hideProUi ? nil : { c in AppearanceTab.addProBadgeToShortcutStyleSegment(c, proIndex: ShortcutStylePreference.allCases.firstIndex(of: .searchOnRelease)!) },
             refreshBadge: { c, overlay in
                 AppearanceTab.refreshTrailingSegmentBadge(c, proIndex: ShortcutStylePreference.allCases.firstIndex(of: .searchOnRelease)!, overlay: overlay)
             },

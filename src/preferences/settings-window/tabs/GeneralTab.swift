@@ -45,7 +45,7 @@ class GeneralTab {
         table.addRow(captureWindowsInBackground)
         table.addNewTable()
         table.addRow(language)
-        if AltTabXBranding.autoUpdateEnabled {
+        if AltTabNeoBranding.autoUpdateEnabled {
             table.addNewTable()
             table.addRow(leftViews: [TableGroupView.makeText(NSLocalizedString("Updates policy", comment: ""))],
                 rightViews: [updatesPolicyDropdown!],
@@ -53,7 +53,7 @@ class GeneralTab {
                 secondaryViewsAlignment: .right,
                 secondaryViewsTopGap: 8)
         }
-        if AltTabXBranding.telemetryEnabled {
+        if AltTabNeoBranding.telemetryEnabled {
             table.addRow(crashPolicy)
         }
         let exportButton = NSButton(title: NSLocalizedString("Export settings…", comment: ""), target: nil, action: nil)

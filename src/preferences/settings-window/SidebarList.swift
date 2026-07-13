@@ -242,7 +242,7 @@ class SidebarListRow: ClickHoverStackView {
     }
 
     func setProBadge(_ show: Bool) {
-        if AltTabXBranding.hideProUi {
+        if AltTabNeoBranding.hideProUi {
             if proBadge != nil {
                 proBadge?.superview?.removeFromSuperview()
                 proBadge = nil

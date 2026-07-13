@@ -508,7 +508,7 @@ class SettingsWindow: NSWindow {
             sidebarScrollView.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
             sidebarScrollView.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
             sidebarScrollView.bottomAnchor.constraint(
-                equalTo: AltTabXFreeMode.enabled ? quitButton.topAnchor : upgradeButton.topAnchor,
+                equalTo: AltTabNeoFreeMode.enabled ? quitButton.topAnchor : upgradeButton.topAnchor,
                 constant: -10),
         ])
     }
@@ -517,7 +517,7 @@ class SettingsWindow: NSWindow {
         upgradeButton.target = self
         upgradeButton.action = #selector(upgradeButtonClicked)
         upgradeButton.translatesAutoresizingMaskIntoConstraints = false
-        upgradeButton.isHidden = AltTabXFreeMode.enabled
+        upgradeButton.isHidden = AltTabNeoFreeMode.enabled
         parent.addSubview(upgradeButton)
         // Align with the sidebar source-list highlight: the scroll view sits flush against the
         // sidebar edges and `.sourceList` adds its own ~10pt internal inset, so the highlight
@@ -689,7 +689,7 @@ class SettingsWindow: NSWindow {
         // targets for since-removed rows out of the section's fixed base — that staleness was the
         // "typing 'sho' no longer highlights Shortcut N" bug.
         if skipSidebarRows, root is SidebarListRow { return }
-        if root is ProBadgeView, !AltTabXBranding.hideProUi {
+        if root is ProBadgeView, !AltTabNeoBranding.hideProUi {
             textValues.append(NSLocalizedString("Pro", comment: ""))
             return
         }

@@ -16,7 +16,7 @@ class AboutTab {
             NSTextField(wrappingLabelWithString: NSLocalizedString("Version", comment: "") + " " + App.version),
             NSTextField(wrappingLabelWithString: App.licence),
         ]
-        if let website = AltTabXBranding.website {
+        if let website = AltTabNeoBranding.website {
             infoRows.append(HyperlinkLabel(NSLocalizedString("Website", comment: ""), website))
         }
         if !App.repository.isEmpty {
@@ -29,14 +29,14 @@ class AboutTab {
         appInfo.spacing = GridView.interPadding
         appInfo.alignment = .centerY
         var rows: [[NSView]] = [[appInfo]]
-        if AltTabXBranding.supportProjectEnabled {
+        if AltTabNeoBranding.supportProjectEnabled {
             rows.append([makeSupportProjectButton()])
         }
         let grid = GridView(rows, 0)
         if centerHero {
             grid.cell(atColumnIndex: 0, rowIndex: 0).xPlacement = .center
         }
-        if AltTabXBranding.supportProjectEnabled, rows.count > 1 {
+        if AltTabNeoBranding.supportProjectEnabled, rows.count > 1 {
             grid.cell(atColumnIndex: 0, rowIndex: 1).xPlacement = .center
         }
         if fitToContent {

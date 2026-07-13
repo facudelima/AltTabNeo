@@ -460,7 +460,7 @@ class AppearanceTab: NSObject {
             ControlsTab.syncOverrideControlsToGlobal()
             refreshAllOverrideInfoLabels()
         }, buttonSpacing: 10, proGatedIndices: proGatedAppearanceStyleIndices())
-        if !AltTabXBranding.hideProUi {
+        if !AltTabNeoBranding.hideProUi {
             addProBadgesToStyleButtons(styleButtons)
         }
         styleButtonsStack = styleButtons
@@ -478,11 +478,11 @@ class AppearanceTab: NSObject {
             ControlsTab.syncOverrideControlsToGlobal()
             refreshAllOverrideInfoLabels()
         })
-        if !AltTabXBranding.hideProUi {
+        if !AltTabNeoBranding.hideProUi {
             wrapAppearanceSizeProLockIntercept(sizeControl)
         }
         sizeControlRef = sizeControl
-        let autoOverlay: ProBadgeView.SegmentOverlay? = AltTabXBranding.hideProUi ? nil : addProBadgeToAutoSegment(sizeControl)
+        let autoOverlay: ProBadgeView.SegmentOverlay? = AltTabNeoBranding.hideProUi ? nil : addProBadgeToAutoSegment(sizeControl)
         autoSegmentOverlayRef = autoOverlay
         if let autoOverlay {
         // AppKit re-resolves segment label/background colors on window-key transitions but doesn't
@@ -576,11 +576,11 @@ class AppearanceTab: NSObject {
             ControlsTab.syncOverrideControlsToGlobal()
             refreshAllOverrideInfoLabels()
         })
-        if !AltTabXBranding.hideProUi {
+        if !AltTabNeoBranding.hideProUi {
             wrapShortcutStyleProLockIntercept(control, proIndex: proIndex)
         }
         shortcutStyleControlRef = control
-        if AltTabXBranding.hideProUi {
+        if AltTabNeoBranding.hideProUi {
             table.addRow(leftText: AppearanceTab.labelShortcutStyle,
                 rightViews: [control, makeOverrideIcon("shortcutStyleOverride")])
             return
@@ -712,7 +712,7 @@ class AppearanceTab: NSObject {
 
     /// Indices of `AppearanceStylePreference.allCases` that are Pro-only (everything but `.thumbnails`).
     static func proGatedAppearanceStyleIndices() -> Set<Int> {
-        if AltTabXBranding.hideProUi { return [] }
+        if AltTabNeoBranding.hideProUi { return [] }
         return Set(AppearanceStylePreference.allCases.enumerated().compactMap { $0.element == .thumbnails ? nil : $0.offset })
     }
 

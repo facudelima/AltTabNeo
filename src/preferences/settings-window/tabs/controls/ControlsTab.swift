@@ -511,7 +511,7 @@ class ControlsTab {
             let row = shortcutRows[index]
             row.setContent(shortcutTitle(index), shortcutSummary(index))
             row.setSelected(index == selectedShortcutIndex && selectedShortcutIndex != gestureSelectionIndex)
-            row.setProBadge(!AltTabXBranding.hideProUi && index >= 1)
+            row.setProBadge(!AltTabNeoBranding.hideProUi && index >= 1)
             rows.addArrangedSubview(row)
             // Re-create the row↔stack width constraint each layout: AppKit drops it when the row is
             // removed from the stack by `clearArrangedSubviews`. The row's height constraint is
