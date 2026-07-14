@@ -1,6 +1,6 @@
 import Foundation
 
-/// Cookie de licencia (no usada en AltTabX).
+/// Cookie de licencia (no usada en AltTabNeo).
 /// Called from App.swift's `onStateChanged` hook after every LicenseManager state transition.
 func syncLicenseCookie(state: LicenseState) {
     guard let host = URL(string: Endpoints.website)?.host else { return }

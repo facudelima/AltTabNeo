@@ -1,6 +1,6 @@
 import Foundation
 
-/// Cliente de licencias remoto (no usado en AltTabX).
+/// Cliente de licencias remoto (no usado en AltTabNeo).
 /// the backend's active payment provider is a deployment-time choice that this client
 /// never sees. Same wire format regardless of who's actually handling payments.
 struct RemoteLicenseClient: LicenseAPI {

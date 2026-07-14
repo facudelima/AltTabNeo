@@ -1,6 +1,6 @@
 import Foundation
 
-/// Gestión de licencias de AltTabX — ver `AltTabXBranding.swift`.
+/// Gestión de licencias de AltTabNeo — ver `AltTabNeoBranding.swift`.
 class LicenseManager {
     static let keychainService = "\(App.bundleIdentifier).license"
     static let defaultsSuiteName = "\(App.bundleIdentifier).license"
@@ -60,13 +60,13 @@ class LicenseManager {
         return Self.lifetimeVariants.contains(variant)
     }
 
-    var isProAvailable: Bool { AltTabXFreeMode.enabled || state.isProAvailable }
+    var isProAvailable: Bool { AltTabNeoFreeMode.enabled || state.isProAvailable }
 
     /// Pro features are locked out as soon as the license is no longer valid. Degradable Pro
     /// preferences are downgraded to their Free equivalents immediately via
     /// `ProTransitionManager.onProLockEngaged()`, wired to the state-change hook in App.swift.
     var isProLocked: Bool {
-        if AltTabXFreeMode.enabled { return false }
+        if AltTabNeoFreeMode.enabled { return false }
         switch state {
         case .pro, .trial: return false
         case .proExpired, .trialExpired: return true
@@ -91,7 +91,7 @@ class LicenseManager {
     }
 
     func initialize() {
-        if AltTabXFreeMode.enabled {
+        if AltTabNeoFreeMode.enabled {
             state = .pro
             return
         }
@@ -180,7 +180,7 @@ class LicenseManager {
     }
 
     func computeState() -> LicenseState {
-        if AltTabXFreeMode.enabled { return .pro }
+        if AltTabNeoFreeMode.enabled { return .pro }
         if keychain.value(account: Self.keychainKeyAccount) != nil {
             let lastValidationResult = defaults.bool(forKey: "lastValidationResult")
             guard lastValidationResult else { return .trialExpired }

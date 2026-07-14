@@ -158,19 +158,19 @@ class ProTransitionManager {
     var hasTriggeredPostExpirationSwitcher: Bool { get { state.hasTriggeredPostExpirationSwitcher } set { state.hasTriggeredPostExpirationSwitcher = newValue } }
 
     var shouldShowBadgeDot: Bool {
-        if AltTabXFreeMode.enabled { return false }
+        if AltTabNeoFreeMode.enabled { return false }
         return ProTransitionManagerTestable.shouldShowBadgeDot(currentState())
     }
 
     // MARK: - Lifecycle
 
     func onAppLaunchComplete() {
-        if AltTabXFreeMode.enabled { return }
+        if AltTabNeoFreeMode.enabled { return }
         scheduler.onAppLaunchComplete()
     }
 
     func onLicenseStateChanged() {
-        if AltTabXFreeMode.enabled {
+        if AltTabNeoFreeMode.enabled {
             scheduler.cancel()
             emit(.dismissAllProWindows)
             emit(.refreshBadge)
@@ -187,7 +187,7 @@ class ProTransitionManager {
 
     /// Called from App.hideUi() when the switcher panel is dismissed.
     func onSwitcherDismissed() {
-        if AltTabXFreeMode.enabled {
+        if AltTabNeoFreeMode.enabled {
             isFreePassSessionActive = false
             pendingDismissAction = nil
             return
@@ -210,7 +210,7 @@ class ProTransitionManager {
     /// Called from App.showUiOrCycleSelection() at the start of a fresh switcher session (not on cycle).
     /// Decides whether to queue a Day 4 tour or a post-expiration free-pass + [C] for after dismissal.
     func onSwitcherShown() {
-        if AltTabXFreeMode.enabled { return }
+        if AltTabNeoFreeMode.enabled { return }
         let action = ProTransitionManagerTestable.evaluateSwitcherOpen(currentState())
         switch action {
         case .showDay4Tour:
@@ -232,7 +232,7 @@ class ProTransitionManager {
 
     /// Returns true if the feature should be allowed to execute
     func attemptHardGatedFeature(_ feature: ProFeature) -> Bool {
-        if AltTabXFreeMode.enabled { return true }
+        if AltTabNeoFreeMode.enabled { return true }
         let action = ProTransitionManagerTestable.evaluateHardGate(currentState())
         switch action {
         case .allow: return true
@@ -266,7 +266,7 @@ class ProTransitionManager {
     }
 
     func onProLockEngaged() {
-        if AltTabXFreeMode.enabled { return }
+        if AltTabNeoFreeMode.enabled { return }
         state.onProLockEngaged()
         NotificationCenter.default.post(name: Self.proLockStateDidChangeNotification, object: nil)
     }
@@ -279,7 +279,7 @@ class ProTransitionManager {
     // MARK: - Timed fire dispatch
 
     private func evaluateAndShow() {
-        if AltTabXFreeMode.enabled { return }
+        if AltTabNeoFreeMode.enabled { return }
         let action = ProTransitionManagerTestable.evaluateTimedAction(currentState())
         switch action {
         case .showWelcome:

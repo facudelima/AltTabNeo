@@ -5,7 +5,7 @@ enum LicenseState: Equatable {
     case trialExpired
 
     var isProAvailable: Bool {
-        if AltTabXFreeMode.enabled { return true }
+        if AltTabNeoFreeMode.enabled { return true }
         switch self {
         case .trial, .pro: return true
         case .proExpired, .trialExpired: return false

@@ -220,7 +220,7 @@ class ProBadgeView: NSView {
     /// reference the same string (e.g. `ShortcutsWhenActiveSheet.searchableStrings`) without
     /// duplicating the `NSLocalizedString` call.
     static var proLabel: String {
-        AltTabXBranding.hideProUi ? "" : NSLocalizedString("Pro", comment: "")
+        AltTabNeoBranding.hideProUi ? "" : NSLocalizedString("Pro", comment: "")
     }
 
     /// Bundle returned from `attach(to:segmentIndex:)`: the badge plus the icon and label
@@ -258,7 +258,7 @@ class ProBadgeView: NSView {
     /// Only valid for the LAST segment — the badge anchors to the control's trailing edge.
     @discardableResult
     static func attach(to segmentedControl: NSSegmentedControl, segmentIndex: Int, label: String, symbol: Symbols) -> SegmentOverlay {
-        if AltTabXBranding.hideProUi {
+        if AltTabNeoBranding.hideProUi {
             segmentedControl.setLabel(label, forSegment: segmentIndex)
             segmentedControl.setImage(NSImage.fromSymbol(symbol, pointSize: 13), forSegment: segmentIndex)
             let hiddenBadge = ProBadgeView()
@@ -351,7 +351,7 @@ class ProBadgeView: NSView {
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
-        if AltTabXBranding.hideProUi {
+        if AltTabNeoBranding.hideProUi {
             isHidden = true
             return
         }
