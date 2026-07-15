@@ -1,4 +1,4 @@
-# AltTabX
+# AltTabNeo
 
 Switcher de ventanas para macOS, con vista previa de miniaturas y atajos personalizables.
 
@@ -20,30 +20,30 @@ Switcher de ventanas para macOS, con vista previa de miniaturas y atajos persona
 
 ### Desde release (recomendado)
 
-1. Descargá `AltTabX-1.0.1.dmg` o `AltTabX-1.0.1.zip` desde [Releases](https://github.com/facudelima/AltTabX/releases).
-2. Arrastrá **AltTabX** a **Aplicaciones**.
+1. Descargá `AltTabNeo-1.0.1.dmg` o `AltTabNeo-1.0.1.zip` desde [Releases](https://github.com/facudelima/AltTabNeo/releases).
+2. Arrastrá **AltTabNeo** a **Aplicaciones**.
 3. Abrí la app y concedé Accesibilidad en Ajustes del Sistema.
 
 ### Desde código
 
 ```bash
-git clone https://github.com/facudelima/AltTabX.git
-cd AltTabX
-open AltTabX.xcodeproj   # esquema Debug → ⌘R
+git clone https://github.com/facudelima/AltTabNeo.git
+cd AltTabNeo
+open AltTabNeo.xcodeproj   # esquema Debug → ⌘R
 ```
 
 Para instalar el build local en `/Applications`:
 
 ```bash
 ./scripts/build-release.sh
-./scripts/install-to-applications.sh dist/AltTabX.app
+./scripts/install-to-applications.sh dist/AltTabNeo.app
 ```
 
 ## Compilar instalable
 
 ```bash
-./scripts/build-release.sh      # Release → dist/AltTabX.app
-./scripts/package-installer.sh  # dist/AltTabX-1.0.0.zip y .dmg
+./scripts/build-release.sh      # Release → dist/AltTabNeo.app
+./scripts/package-installer.sh  # dist/AltTabNeo-1.0.0.zip y .dmg
 ```
 
 ## Licencia
