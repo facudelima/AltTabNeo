@@ -6,16 +6,16 @@
     <description>AltTabNeo updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.1.1</title>
-      <pubDate>Wed, 15 Jul 2026 13:31:54 +0000</pubDate>
-      <sparkle:version>4</sparkle:version>
-      <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
+      <title>Version 1.1.2</title>
+      <pubDate>Wed, 15 Jul 2026 13:39:05 +0000</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>10.13</sparkle:minimumSystemVersion>
       <enclosure
-        url="https://github.com/facudelima/AltTabNeo/releases/download/v1.1.1/AltTabNeo-1.1.1.zip"
-        length="8250045"
+        url="https://github.com/facudelima/AltTabNeo/releases/download/v1.1.2/AltTabNeo-1.1.2.zip"
+        length="8251142"
         type="application/octet-stream"
-        sparkle:edSignature="rJRKumAX+dAwJfG253ghloGkDL217hdWxH//66UK+2Oc/AKcao1406OaQSLMdrl/6TmTCOurPtk8YkdWhZbnCA==" />
+        sparkle:edSignature="L2oJvcn9BCO+4ohld+17clkWhwCnxth9ILN0UMSSPWUgTeFnZ0iUAHsxNZ9SYFPOXtK/F8kd3aehavawkRajCQ==" />
     </item>
   </channel>
 </rss>

@@ -22,7 +22,7 @@ Switcher de ventanas para macOS, con vista previa de miniaturas y atajos persona
 
 ### Desde release (recomendado)
 
-1. Descargá `AltTabNeo-1.1.1.dmg` o `AltTabNeo-1.1.1.zip` desde [Releases](https://github.com/facudelima/AltTabNeo/releases).
+1. Descargá `AltTabNeo-1.1.2.dmg` o `AltTabNeo-1.1.2.zip` desde [Releases](https://github.com/facudelima/AltTabNeo/releases).
 2. Arrastrá **AltTabNeo** a **Aplicaciones**.
 3. Abrí la app y concedé Accesibilidad en Ajustes del Sistema.
 
