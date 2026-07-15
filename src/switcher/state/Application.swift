@@ -64,8 +64,11 @@ class Application: NSObject {
     }
 
     /// Best-effort source icon for an app. `NSRunningApplication.icon` is often a 32×32 cache and ignores
-    /// asset-catalog dark variants (e.g. cmux ships `AppIconDark`). Prefer the bundle / workspace icon at
-    /// 1024×1024, with an explicit dark resource when the system is in dark mode.
+    /// asset-catalog / Icon Composer appearance variants. Resolution order:
+    /// 1. Explicit dark resource (e.g. cmux `AppIconDark`) when the system is in dark mode
+    /// 2. `NSWorkspace.icon(forFile:)` — honours Aqua / DarkAqua / System layered App Icons (e.g. Warp)
+    /// 3. `Bundle.image(forResource:)` — static catalog / `.icns` fallback (often stuck on the light rendition)
+    /// 4. `NSRunningApplication.icon`
     /// Call from the main thread when possible — `isDarkModeForIcons()` falls back to UserDefaults off-main.
     static func resolveSourceIcon(for application: Application) -> NSImage? {
         if let bundleURL = application.bundleURL {
@@ -88,10 +91,15 @@ class Application: NSObject {
                 }
             }
         }
+        // Prefer workspace over Bundle.image: Icon Composer apps (Warp) put light/dark layers in Assets.car;
+        // Bundle.image(forResource:) often returns a non-appearance-aware rendition that stays light in dark mode.
+        if let workspaceIcon = upscaledWorkspaceIcon(bundleURL.path) {
+            return workspaceIcon
+        }
         if let bundleIcon = bundle.image(forResource: iconName) {
             return upscaledIcon(bundleIcon)
         }
-        return upscaledWorkspaceIcon(bundleURL.path) ?? upscaledIcon(runningIcon)
+        return upscaledIcon(runningIcon)
     }
 
     private static func darkIconResourceNames(_ base: String) -> [String] {

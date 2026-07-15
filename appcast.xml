@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>AltTabNeo</title>
-    <description>AltTabNeo updates (disabled)</description>
+    <link>https://github.com/facudelima/AltTabNeo</link>
+    <description>AltTabNeo updates</description>
     <language>en</language>
+    <item>
+      <title>Version 1.1.1</title>
+      <pubDate>Wed, 15 Jul 2026 13:31:54 +0000</pubDate>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.13</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/facudelima/AltTabNeo/releases/download/v1.1.1/AltTabNeo-1.1.1.zip"
+        length="8250045"
+        type="application/octet-stream"
+        sparkle:edSignature="rJRKumAX+dAwJfG253ghloGkDL217hdWxH//66UK+2Oc/AKcao1406OaQSLMdrl/6TmTCOurPtk8YkdWhZbnCA==" />
+    </item>
   </channel>
 </rss>

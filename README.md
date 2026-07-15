@@ -8,8 +8,8 @@ Switcher de ventanas para macOS, con vista previa de miniaturas y atajos persona
 
 - Cambio rápido entre ventanas (estilo Alt+Tab de Windows)
 - Miniaturas, iconos de app y títulos configurables
-- Sin telemetría, sin auto-updates remotos, sin licencias Pro
-- Todas las funciones desbloqueadas
+- Actualizaciones automáticas (Sparkle) desde GitHub Releases
+- Sin telemetría ni licencias Pro — todas las funciones desbloqueadas
 
 ## Requisitos
 
@@ -20,9 +20,11 @@ Switcher de ventanas para macOS, con vista previa de miniaturas y atajos persona
 
 ### Desde release (recomendado)
 
-1. Descargá `AltTabNeo-1.1.0.dmg` o `AltTabNeo-1.1.0.zip` desde [Releases](https://github.com/facudelima/AltTabNeo/releases).
+1. Descargá `AltTabNeo-1.1.1.dmg` o `AltTabNeo-1.1.1.zip` desde [Releases](https://github.com/facudelima/AltTabNeo/releases).
 2. Arrastrá **AltTabNeo** a **Aplicaciones**.
 3. Abrí la app y concedé Accesibilidad en Ajustes del Sistema.
+
+Las versiones instaladas desde un release reciben actualizaciones solas (Menú → **Check for updates…**).
 
 ### Desde código
 
@@ -39,11 +41,14 @@ Para instalar el build local en `/Applications`:
 ./scripts/install-to-applications.sh dist/AltTabNeo.app
 ```
 
-## Compilar instalable
+## Compilar instalable / publicar
 
 ```bash
-./scripts/build-release.sh      # Release → dist/AltTabNeo.app
-./scripts/package-installer.sh  # dist/AltTabNeo-1.1.0.zip y .dmg
+./scripts/build-release.sh                 # Release → dist/AltTabNeo.app
+./scripts/package-installer.sh             # zip + dmg
+./scripts/publish-github-release.sh        # firma Sparkle + appcast.xml
+# commit + push, luego:
+./scripts/publish-github-release.sh --upload-only
 ```
 
 ## Licencia

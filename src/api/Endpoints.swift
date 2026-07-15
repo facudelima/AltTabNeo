@@ -4,7 +4,7 @@ enum Endpoints {
     static let domain = Bundle.main.object(forInfoDictionaryKey: "Domain") as? String ?? "alttabneo.local"
     static let apiDomain = Bundle.main.object(forInfoDictionaryKey: "ApiDomain") as? String ?? domain
     static let website = AltTabNeoBranding.website ?? "https://\(domain)"
-    static let appcastUrl = "\(website)/appcast.xml"
+    static let appcastUrl = AltTabNeoBranding.appcastURL
     static let supportUrl = "\(website)/support"
     static let checkoutUrl = "\(website)/pricing"
     static let accountUrl = "\(website)/my-account"
