@@ -2,7 +2,9 @@
 
 Switcher de ventanas para macOS, con vista previa de miniaturas y atajos personalizables.
 
-**Autor:** [Facundo De Lima](https://github.com/facudelima)
+**Mantenedor:** [Facundo De Lima](https://github.com/facudelima)
+
+**Basado en:** [AltTab](https://github.com/lwouis/alt-tab-macos) de [lwouis](https://github.com/lwouis) y [contribuidores](https://github.com/lwouis/alt-tab-macos/graphs/contributors) — proyecto open source bajo GPL-3.0. AltTabNeo es un derivado modificado (misma licencia).
 
 ## Características
 
@@ -53,4 +55,8 @@ Para instalar el build local en `/Applications`:
 
 ## Licencia
 
-GPL-3.0 — ver [LICENCE.md](LICENCE.md).
+**GNU GPL v3** — ver [LICENCE.md](LICENCE.md).
+
+Este software incluye código de [AltTab](https://github.com/lwouis/alt-tab-macos) (© lwouis and contributors), redistribuido bajo la misma GPL-3.0. Las modificaciones de AltTabNeo © 2026 Facundo De Lima.
+
+Cualquier redistribución (incluidos binarios) debe conservar esta licencia y el acceso al código fuente correspondiente.

@@ -16,6 +16,9 @@ class AboutTab {
             NSTextField(wrappingLabelWithString: NSLocalizedString("Version", comment: "") + " " + App.version),
             NSTextField(wrappingLabelWithString: App.licence),
         ]
+        infoRows.append(HyperlinkLabel(
+            NSLocalizedString("Based on", comment: "") + " " + AltTabNeoBranding.basedOnName,
+            AltTabNeoBranding.basedOnURL))
         if let website = AltTabNeoBranding.website {
             infoRows.append(HyperlinkLabel(NSLocalizedString("Website", comment: ""), website))
         }
